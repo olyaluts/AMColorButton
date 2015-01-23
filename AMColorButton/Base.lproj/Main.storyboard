@@ -673,8 +673,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EgT-Ki-yeQ" customClass="AMColorButton">
-                                <rect key="frame" x="179" y="162" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0lK-sK-CKt">
+                                <rect key="frame" x="179" y="162" width="194" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="5454545454" bezelStyle="roundedRect" imagePosition="left" alignment="center" state="on" inset="2" id="0lK-sK-CKt">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
