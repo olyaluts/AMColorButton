@@ -82,8 +82,8 @@
         case NSOffState:
             if (self.titleSelectedColor != nil) {
                 [self setColor:self.titleSelectedColor];
+                return;
             }
-            break;
         case NSOnState:
         default:
             if (self.titleColor != nil) {
