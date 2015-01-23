@@ -74,24 +74,23 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"KeyPath: %@", keyPath);
-    NSLog(@"ofObject: %@", object);
-    NSLog(@"change: %@", change);
     [self setTextColorWithState:[change[@"new"] integerValue]];
 }
 
 -(void)setTextColorWithState:(NSCellStateValue)stateValue {
     switch (stateValue) {
-        case NSOnState:
+        case NSOffState:
             if (self.titleSelectedColor != nil) {
                 [self setColor:self.titleSelectedColor];
-                return;
             }
-        case NSOffState:
+            break;
+        case NSOnState:
         default:
             if (self.titleColor != nil) {
                 [self setColor:self.titleColor];
-            } else
+                return;
+            }
+            else
                 [self setColor:[NSColor controlTextColor]];
             break;
     }
