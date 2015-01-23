@@ -1,0 +1,17 @@
+//
+//  AMColorButton.h
+//  AMColorButton
+//
+//  Created by Daria Kovalenko on 1/23/15.
+//  Copyright (c) 2015 anadea. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface AMColorButton : NSButton
+
+@property (strong, nonatomic) IBInspectable NSColor *titleColor;
+@property (strong, nonatomic) IBInspectable NSColor *titleHighlightedColor;
+@property (strong, nonatomic) IBInspectable NSColor *titleSelectedColor;
+
+@end
