@@ -31,7 +31,20 @@
     [super tearDown];
 }
 
-- (void)testTitleColor {
+- (void)testTitleOffColor {
+    [button setState:NSOffState];
+    
+    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    [button setTitleColor:color];
+    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    [button setTitleSelectedColor:selectedColor];
+    
+    NSRange range = NSMakeRange(0, button.title.length);
+    id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
+    XCTAssertTrue([attr isEqualTo:selectedColor]);
+}
+
+- (void)testTitleOffColorWithoutSelectedColor {
     [button setState:NSOffState];
     
     NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
@@ -42,17 +55,18 @@
     XCTAssertTrue([attr isEqualTo:color]);
 }
 
-- (void)testSelectedTitleColor {
+- (void)testTitleColor {
     [button setState:NSOnState];
     
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:255./255. green:150./255. blue:140./255. alpha:1.0];
+    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    [button setTitleColor:color];
+    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
     [button setTitleSelectedColor:selectedColor];
     
     NSRange range = NSMakeRange(0, button.title.length);
     id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
     
-    XCTAssertTrue([attr isEqualTo:selectedColor]);
-    [button setHighlighted:YES];
+    XCTAssertTrue([attr isEqualTo:color]);
 }
 
 @end
