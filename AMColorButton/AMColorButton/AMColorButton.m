@@ -98,7 +98,10 @@
 
 -(void)setColor:(NSColor *)color {
     if (self.title.length > 0) {
-        [self setAttributedTitle:[[NSAttributedString alloc] initWithString:self.title attributes:@{NSForegroundColorAttributeName : color}]];
+        NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc] initWithAttributedString:[self attributedTitle]];
+        [attrTitle addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, self.title.length)];
+        
+        [self setAttributedTitle:attrTitle];
     }
 }
 @end
