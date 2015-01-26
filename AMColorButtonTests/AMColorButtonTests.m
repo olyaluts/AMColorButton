@@ -69,4 +69,28 @@
     XCTAssertTrue([attr isEqualTo:color]);
 }
 
+- (void)testMoveInOut {
+    [button setState:NSOnState];
+    
+    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    [button setTitleColor:color];
+    
+    
+    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    [button setTitleSelectedColor:selectedColor];
+    
+    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
+    [button setTitleHighlightedColor:highlightedColor];
+    
+    [button mouseEntered:[NSEvent new]];
+    NSRange range = NSMakeRange(0, button.title.length);
+    id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
+    
+    XCTAssertTrue([attr isEqualTo:highlightedColor]);
+    
+    [button mouseExited:[NSEvent new]];
+    
+    attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
+    XCTAssertTrue([attr isEqualTo:color]);
+}
 @end
