@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBInspectable NSColor *titleHighlightedColor;
 @property (strong, nonatomic) IBInspectable NSColor *titleSelectedColor;
 
+@property (strong, nonatomic) IBInspectable NSColor *backgroundColor;
+
 @end

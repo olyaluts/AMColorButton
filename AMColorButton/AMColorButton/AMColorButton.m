@@ -18,6 +18,7 @@
               options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
               context:NULL];
     [self setTextColorWithState:self.state];
+    [self.cell setBackgroundColor: self.backgroundColor];
 }
 
 #pragma mark - Mouse events
