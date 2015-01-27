@@ -75,7 +75,6 @@
     NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
     [button setTitleColor:color];
     
-    
     NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
     [button setTitleSelectedColor:selectedColor];
     
@@ -92,5 +91,51 @@
     
     attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
     XCTAssertTrue([attr isEqualTo:color]);
+}
+
+- (void)testMoveInOutBackground {
+    [button setState:NSOnState];
+    
+    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    [button setBackgroundColor:color];
+    
+    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    [button setSelectedBgColor:selectedColor];
+    
+    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
+    [button setHighlightedBgColor:highlightedColor];
+    
+    [button mouseEntered:[NSEvent new]];
+    id attr = [button.cell backgroundColor];
+    
+    XCTAssertTrue([attr isEqualTo:highlightedColor]);
+    
+    [button mouseExited:[NSEvent new]];
+    
+    attr = [button.cell backgroundColor];
+    XCTAssertTrue([attr isEqualTo:color]);
+}
+
+- (void)testMoveInOutOffBackground {
+    [button setState:NSOffState];
+    
+    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    [button setBackgroundColor:color];
+    
+    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    [button setSelectedBgColor:selectedColor];
+    
+    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
+    [button setHighlightedBgColor:highlightedColor];
+    
+    [button mouseEntered:[NSEvent new]];
+    id attr = [button.cell backgroundColor];
+    
+    XCTAssertTrue([attr isEqualTo:highlightedColor]);
+    
+    [button mouseExited:[NSEvent new]];
+    
+    attr = [button.cell backgroundColor];
+    XCTAssertTrue([attr isEqualTo:selectedColor]);
 }
 @end

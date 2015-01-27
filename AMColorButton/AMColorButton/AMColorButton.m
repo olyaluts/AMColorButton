@@ -41,12 +41,8 @@
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
-    if (self.titleColor != nil) {
-        [self setTextColorWithState:self.state];
-    }
-    if (self.selectedBgColor) {
-        [self setBackgroundColorWithState:self.state];
-    }
+    [self setTextColorWithState:self.state];
+    [self setBackgroundColorWithState:self.state];
     [super mouseExited:theEvent];
 }
 
@@ -137,7 +133,7 @@
                 return;
             }
             else
-                [self setColor:[NSColor controlColor]];
+                [self.cell setBackgroundColor:[NSColor controlColor]];
             break;
     }
 }
