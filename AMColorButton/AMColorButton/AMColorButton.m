@@ -18,7 +18,7 @@
               options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
               context:NULL];
     [self setTextColorWithState:self.state];
-    [self.cell setBackgroundColor: self.backgroundColor];
+    [self setBackgroundColorWithState:self.state];
 }
 
 #pragma mark - Mouse events
@@ -40,6 +40,9 @@
 - (void)mouseExited:(NSEvent *)theEvent {
     if (self.titleColor != nil) {
         [self setTextColorWithState:self.state];
+    }
+    if (self.selectedBgColor) {
+        [self setBackgroundColorWithState:self.state];
     }
     [super mouseExited:theEvent];
 }
@@ -73,8 +76,7 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     [self setTextColorWithState:[change[@"new"] integerValue]];
 }
 
@@ -93,6 +95,25 @@
             }
             else
                 [self setColor:[NSColor controlTextColor]];
+            break;
+    }
+}
+
+-(void)setBackgroundColorWithState:(NSCellStateValue)stateValue {
+    switch (stateValue) {
+        case NSOffState:
+            if (self.selectedBgColor) {
+                [self.cell setBackgroundColor: self.selectedBgColor];
+                return;
+            }
+        case NSOnState:
+        default:
+            if (self.backgroundColor) {
+                [self.cell setBackgroundColor: self.backgroundColor];
+                return;
+            }
+            else
+                [self setColor:[NSColor controlColor]];
             break;
     }
 }

@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBInspectable NSColor *titleSelectedColor;
 
 @property (strong, nonatomic) IBInspectable NSColor *backgroundColor;
+@property (strong, nonatomic) IBInspectable NSColor *selectedBgColor;
 
 @end
