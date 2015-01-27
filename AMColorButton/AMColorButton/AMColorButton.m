@@ -102,12 +102,12 @@
 
 -(void)setTextColorWithState:(NSCellStateValue)stateValue {
     switch (stateValue) {
-        case NSOffState:
+        case NSOnState:
             if (self.titleSelectedColor != nil) {
                 [self setColor:self.titleSelectedColor];
                 return;
             }
-        case NSOnState:
+        case NSOffState:
         default:
             if (self.titleColor != nil) {
                 [self setColor:self.titleColor];
@@ -121,12 +121,12 @@
 
 -(void)setBackgroundColorWithState:(NSCellStateValue)stateValue {
     switch (stateValue) {
-        case NSOffState:
+        case NSOnState:
             if (self.selectedBgColor) {
                 [self.cell setBackgroundColor: self.selectedBgColor];
                 return;
             }
-        case NSOnState:
+        case NSOffState:
         default:
             if (self.backgroundColor) {
                 [self.cell setBackgroundColor: self.backgroundColor];
