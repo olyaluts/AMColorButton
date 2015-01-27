@@ -12,6 +12,9 @@
 
 @interface AMColorButtonTests : XCTestCase {
     AMColorButton *button;
+    NSColor *color;
+    NSColor *selectedColor;
+    NSColor *highlightedColor;
 }
 
 @end
@@ -20,13 +23,21 @@
 
 - (void)setUp {
     [super setUp];
+    color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
+    selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
+    
     button = [[AMColorButton alloc] init];
     [button setTitle:@"Button title"];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     button = nil;
+    color = nil;
+    selectedColor = nil;
+    highlightedColor = nil;
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
@@ -34,21 +45,9 @@
 - (void)testTitleOffColor {
     [button setState:NSOffState];
     
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
     [button setTitleColor:color];
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
+    
     [button setTitleSelectedColor:selectedColor];
-    
-    NSRange range = NSMakeRange(0, button.title.length);
-    id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
-    XCTAssertTrue([attr isEqualTo:selectedColor]);
-}
-
-- (void)testTitleOffColorWithoutSelectedColor {
-    [button setState:NSOffState];
-    
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
-    [button setTitleColor:color];
     
     NSRange range = NSMakeRange(0, button.title.length);
     id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
@@ -57,28 +56,39 @@
 
 - (void)testTitleColor {
     [button setState:NSOnState];
-    
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
     [button setTitleColor:color];
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
     [button setTitleSelectedColor:selectedColor];
     
     NSRange range = NSMakeRange(0, button.title.length);
     id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
     
-    XCTAssertTrue([attr isEqualTo:color]);
+    XCTAssertTrue([attr isEqualTo:selectedColor]);
 }
 
 - (void)testMoveInOut {
     [button setState:NSOnState];
     
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
     [button setTitleColor:color];
-    
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
     [button setTitleSelectedColor:selectedColor];
+    [button setTitleHighlightedColor:highlightedColor];
     
-    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
+    [button mouseEntered:[NSEvent new]];
+    NSRange range = NSMakeRange(0, button.title.length);
+    id attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
+    
+    XCTAssertTrue([attr isEqualTo:highlightedColor]);
+    
+    [button mouseExited:[NSEvent new]];
+    
+    attr = [[button attributedTitle] attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:&range];
+    XCTAssertTrue([attr isEqualTo:selectedColor]);
+}
+
+- (void)testMoveInOutOff {
+    [button setState:NSOffState];
+    
+    [button setTitleColor:color];
+    [button setTitleSelectedColor:selectedColor];
     [button setTitleHighlightedColor:highlightedColor];
     
     [button mouseEntered:[NSEvent new]];
@@ -96,36 +106,8 @@
 - (void)testMoveInOutBackground {
     [button setState:NSOnState];
     
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
     [button setBackgroundColor:color];
-    
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
     [button setSelectedBgColor:selectedColor];
-    
-    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
-    [button setHighlightedBgColor:highlightedColor];
-    
-    [button mouseEntered:[NSEvent new]];
-    id attr = [button.cell backgroundColor];
-    
-    XCTAssertTrue([attr isEqualTo:highlightedColor]);
-    
-    [button mouseExited:[NSEvent new]];
-    
-    attr = [button.cell backgroundColor];
-    XCTAssertTrue([attr isEqualTo:color]);
-}
-
-- (void)testMoveInOutOffBackground {
-    [button setState:NSOffState];
-    
-    NSColor *color = [NSColor colorWithCalibratedRed:20./255. green:30./255. blue:40./255. alpha:1.0];
-    [button setBackgroundColor:color];
-    
-    NSColor *selectedColor = [NSColor colorWithCalibratedRed:120./255. green:130./255. blue:140./255. alpha:1.0];
-    [button setSelectedBgColor:selectedColor];
-    
-    NSColor *highlightedColor = [NSColor colorWithCalibratedRed:0.5 green:0. blue:0.5 alpha:1.0];
     [button setHighlightedBgColor:highlightedColor];
     
     [button mouseEntered:[NSEvent new]];
@@ -137,5 +119,23 @@
     
     attr = [button.cell backgroundColor];
     XCTAssertTrue([attr isEqualTo:selectedColor]);
+}
+
+- (void)testMoveInOutOffBackground {
+    [button setState:NSOffState];
+    
+    [button setBackgroundColor:color];
+    [button setSelectedBgColor:selectedColor];
+    [button setHighlightedBgColor:highlightedColor];
+    
+    [button mouseEntered:[NSEvent new]];
+    id attr = [button.cell backgroundColor];
+    
+    XCTAssertTrue([attr isEqualTo:highlightedColor]);
+    
+    [button mouseExited:[NSEvent new]];
+    
+    attr = [button.cell backgroundColor];
+    XCTAssertTrue([attr isEqualTo:color]);
 }
 @end
