@@ -31,8 +31,11 @@
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
-    if (self.titleHighlightedColor != nil) {
+    if (self.titleHighlightedColor) {
         [self setColor:self.titleHighlightedColor];
+    }
+    if (self.highlightedBgColor) {
+        [self.cell setBackgroundColor: self.highlightedBgColor];
     }
     [super mouseEntered:theEvent];
 }
@@ -76,6 +79,26 @@
     }
 }
 
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
+    _backgroundColor = backgroundColor;
+    if (backgroundColor) {
+        [self setBackgroundColorWithState:self.state];
+    }
+}
+
+- (void)setHighlightedBgColor:(NSColor *)highlightedBgColor {
+    _highlightedBgColor = highlightedBgColor;
+    if (highlightedBgColor) {
+        [self setBackgroundColorWithState:self.state];
+    }
+}
+
+- (void)setSelectedBgColor:(NSColor *)selectedBgColor {
+    _selectedBgColor = selectedBgColor;
+    if (selectedBgColor) {
+        [self setBackgroundColorWithState:self.state];
+    }
+}
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     [self setTextColorWithState:[change[@"new"] integerValue]];
 }
