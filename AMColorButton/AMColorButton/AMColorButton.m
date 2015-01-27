@@ -101,6 +101,7 @@
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     [self setTextColorWithState:[change[@"new"] integerValue]];
+    [self setBackgroundColorWithState:[change[@"new"] integerValue]];
 }
 
 -(void)setTextColorWithState:(NSCellStateValue)stateValue {
