@@ -4,7 +4,8 @@ Pod::Spec.new do |s|
   s.summary      = "User can set title and background colour for NSButton"
 
   s.description  = <<-DESC
-                   You can create custom NSButton with title, background colours. Also you can select colours with IB.                   DESC
+                   You can create custom NSButton with title, background colours. Also you can select colours with IB.
+                   DESC
 
   s.homepage     = "https://github.com/olyaluts/AMColorButton"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
