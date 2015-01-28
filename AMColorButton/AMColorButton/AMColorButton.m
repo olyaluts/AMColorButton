@@ -9,6 +9,39 @@
 #import "AMColorButton.h"
 
 @implementation AMColorButton
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self setDefaultColors];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self setDefaultColors];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(NSRect)frameRect {
+    self = [super initWithFrame:frameRect];
+    if (self) {
+        [self setDefaultColors];
+    }
+    return self;
+}
+
+-(void)setDefaultColors {
+    self.titleColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
+    self.titleHighlightedColor = [NSColor blackColor];
+    self.titleSelectedColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
+    
+    self.backgroundColor = nil;
+    self.highlightedBgColor = [NSColor colorWithCalibratedRed:210./255. green:230./255. blue:249./255. alpha:1.0];
+    self.selectedBgColor = nil;
+}
 
 -(void)awakeFromNib {
     [self addTrackingRect:NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height) owner:self userData:nil assumeInside:YES];
@@ -128,12 +161,7 @@
             }
         case NSOffState:
         default:
-            if (self.backgroundColor) {
-                [self.cell setBackgroundColor: self.backgroundColor];
-                return;
-            }
-            else
-                [self.cell setBackgroundColor:[NSColor controlColor]];
+            [self.cell setBackgroundColor: self.backgroundColor];
             break;
     }
 }

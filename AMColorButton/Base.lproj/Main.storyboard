@@ -672,23 +672,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EgT-Ki-yeQ" customClass="AMColorButton">
-                                <rect key="frame" x="179" y="162" width="194" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="5454545454" bezelStyle="roundedRect" imagePosition="left" alignment="center" state="on" inset="2" id="0lK-sK-CKt">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzk-Rs-fya" customClass="AMColorButton">
+                                <rect key="frame" x="179" y="175" width="122" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="DAa-Cm-Gd4">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleSelectedColor">
-                                        <color key="value" red="0.26195023150000002" green="0.69817708329999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightedColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
+                                <rect key="frame" x="179" y="104" width="122" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" imageScaling="proportionallyDown" inset="2" id="t2z-ms-5jp">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
                             </button>
                         </subviews>
                     </view>
