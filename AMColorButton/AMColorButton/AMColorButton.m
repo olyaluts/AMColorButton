@@ -54,6 +54,12 @@
     [self setBackgroundColorWithState:self.state];
 }
 
+-(void)drawRect:(NSRect)dirtyRect {
+    [super drawRect:dirtyRect];
+
+    [self setBackgroundColorWithState:self.state];
+}
+
 #pragma mark - Mouse events
 - (void)mouseDown:(NSEvent *)theEvent {
     [super mouseDown:theEvent];
