@@ -51,23 +51,24 @@
                dirtyRect.size.height - self.borderOffset *2) : dirtyRect;
     
     [self.borderColor set];
-    NSBezierPath* thePath = [NSBezierPath bezierPath];
-    [thePath appendBezierPathWithRoundedRect:borderRect xRadius:self.cornerRadius yRadius:self.cornerRadius];
+    NSBezierPath *borderPath = [NSBezierPath bezierPath];
+    [borderPath appendBezierPathWithRoundedRect:borderRect xRadius:self.cornerRadius yRadius:self.cornerRadius];
     CGFloat array[2];
     array[0]= self.dotLineLength;
     array[1]= self.dotSpaceLength;
-    [thePath setLineDash:array count:1. phase:0.];
-    [thePath setLineWidth:self.borderWidth];
-    [thePath stroke];
+    [borderPath setLineDash:array count:1. phase:0.];
+    [borderPath setLineWidth:self.borderWidth];
+    [borderPath stroke];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
-    [self.backgroundColor set];
-    NSRectFill(dirtyRect);
-
-    if(self.bordered){
-        [self drawBorder:dirtyRect];
+    if (dirtyRect.size.height == self.bounds.size.height && dirtyRect.size.width == self.bounds.size.width) {
+        [self.backgroundColor set];
+        NSRectFill(dirtyRect);
+        if(self.bordered){
+            [self drawBorder:dirtyRect];
+        }
     }
 }
 
