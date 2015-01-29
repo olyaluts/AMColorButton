@@ -21,4 +21,8 @@
     // Update the view, if already loaded.
 }
 
+-(IBAction)makeBordered:(id)sender {
+    [self.borderedView setBordered:!self.borderedView.bordered];
+}
+
 @end

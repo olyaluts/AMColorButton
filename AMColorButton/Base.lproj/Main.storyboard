@@ -669,29 +669,46 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="375"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzk-Rs-fya" customClass="AMColorButton">
-                                <rect key="frame" x="179" y="175" width="122" height="19"/>
+                                <rect key="frame" x="27" y="336" width="122" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="DAa-Cm-Gd4">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
-                                <rect key="frame" x="179" y="104" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" imageScaling="proportionallyDown" inset="2" id="t2z-ms-5jp">
-                                    <behavior key="behavior" lightByContents="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                            </button>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-WV-U3B" customClass="AMDashBorderedView">
+                                <rect key="frame" x="93" y="130" width="339" height="147"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
+                                        <rect key="frame" x="63" y="64" width="185" height="19"/>
+                                        <buttonCell key="cell" type="roundRect" title="enable/disable border on view" bezelStyle="roundedRect" alignment="center" imageScaling="proportionallyDown" inset="2" id="t2z-ms-5jp">
+                                            <behavior key="behavior" lightByContents="YES"/>
+                                            <font key="font" metaFont="cellTitle"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="makeBordered:" target="XfG-lQ-9wD" id="d69-br-fi0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bordered" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
                         </subviews>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bordered" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="borderedView" destination="pkm-WV-U3B" id="jWF-gF-dwN"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="23" y="743.5"/>
         </scene>
     </scenes>
 </document>

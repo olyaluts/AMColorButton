@@ -7,9 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AMDashBorderedView.h"
 
 @interface ViewController : NSViewController
 
+@property (weak, nonatomic) IBOutlet AMDashBorderedView *borderedView;
+
+-(IBAction)makeBordered:(id)sender;
 
 @end
 
