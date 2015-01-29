@@ -18,4 +18,6 @@
 @property (strong, nonatomic) IBInspectable NSColor *highlightedBgColor;
 @property (strong, nonatomic) IBInspectable NSColor *selectedBgColor;
 
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+
 @end

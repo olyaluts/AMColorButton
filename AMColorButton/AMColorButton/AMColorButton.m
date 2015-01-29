@@ -43,6 +43,12 @@
     self.selectedBgColor = nil;
 }
 
+-(void)setCornerRadius:(CGFloat)cornerRadius {
+    _cornerRadius = cornerRadius;
+    [self setWantsLayer:YES];
+    self.layer.cornerRadius = _cornerRadius;
+}
+
 -(void)awakeFromNib {
     [self addTrackingRect:NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height) owner:self userData:nil assumeInside:YES];
     
@@ -57,7 +63,9 @@
 -(void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 
+    [self setWantsLayer:YES];
     [self setBackgroundColorWithState:self.state];
+    self.layer.cornerRadius = self.cornerRadius;
 }
 
 #pragma mark - Mouse events
