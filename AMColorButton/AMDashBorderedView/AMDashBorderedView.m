@@ -43,6 +43,7 @@
     self.dotSpaceLength = 10.;
     self.borderOffset = 15.;
     self.cornerRadius = 10.;
+    self.bordered = NO;
 }
 
 - (void)drawBorder:(NSRect)dirtyRect {
