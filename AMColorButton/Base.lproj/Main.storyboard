@@ -672,15 +672,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="375"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzk-Rs-fya" customClass="AMColorButton">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="wzk-Rs-fya" customClass="AMColorButton">
                                 <rect key="frame" x="27" y="336" width="122" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="qeq-uy-riV"/>
+                                    <constraint firstAttribute="width" constant="122" id="zZ3-L4-PbO"/>
+                                </constraints>
                                 <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="DAa-Cm-Gd4">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-WV-U3B" customClass="AMDashBorderedView">
-                                <rect key="frame" x="93" y="130" width="339" height="147"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pkm-WV-U3B" customClass="AMDashBorderedView">
+                                <rect key="frame" x="71" y="130" width="339" height="147"/>
                                 <subviews>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
                                         <rect key="frame" x="63" y="64" width="185" height="19"/>
@@ -698,9 +702,14 @@
                                 </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="bordered" value="YES"/>
-                        </userDefinedRuntimeAttributes>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pkm-WV-U3B" secondAttribute="bottom" constant="130" id="6oE-mX-fHn"/>
+                            <constraint firstItem="wzk-Rs-fya" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="27" id="AxV-lJ-alL"/>
+                            <constraint firstItem="pkm-WV-U3B" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="71" id="CtB-F5-Ks0"/>
+                            <constraint firstAttribute="trailing" secondItem="pkm-WV-U3B" secondAttribute="trailing" constant="70" id="GFV-Rd-4w6"/>
+                            <constraint firstItem="wzk-Rs-fya" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="JP7-gT-IYn"/>
+                            <constraint firstItem="pkm-WV-U3B" firstAttribute="top" secondItem="wzk-Rs-fya" secondAttribute="bottom" constant="59" id="dOr-lv-rFZ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="borderedView" destination="pkm-WV-U3B" id="jWF-gF-dwN"/>
