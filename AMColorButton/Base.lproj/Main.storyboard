@@ -686,8 +686,8 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pkm-WV-U3B" customClass="AMDashBorderedView">
                                 <rect key="frame" x="71" y="130" width="339" height="147"/>
                                 <subviews>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
-                                        <rect key="frame" x="63" y="64" width="185" height="19"/>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Rg-2Pj" customClass="AMColorButton">
+                                        <rect key="frame" x="77" y="64" width="185" height="19"/>
                                         <buttonCell key="cell" type="roundRect" title="enable/disable border on view" bezelStyle="roundedRect" alignment="center" imageScaling="proportionallyDown" inset="2" id="t2z-ms-5jp">
                                             <behavior key="behavior" lightByContents="YES"/>
                                             <font key="font" metaFont="cellTitle"/>
@@ -696,7 +696,42 @@
                                             <action selector="makeBordered:" target="XfG-lQ-9wD" id="d69-br-fi0"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="im3-cR-tbg" customClass="AMMoveButton">
+                                        <rect key="frame" x="96" y="19" width="147" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="147" id="ASu-Ez-ahL"/>
+                                            <constraint firstAttribute="height" constant="18" id="Swo-eg-4EZ"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="roundRect" title="button without selector" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="27A-gq-vbp">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="controlContent"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="33b-Rh-qWg" customClass="AMMoveButton">
+                                        <rect key="frame" x="51" y="96" width="237" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="3TK-Uz-oSO"/>
+                                            <constraint firstAttribute="width" constant="225" id="H9y-sk-NNX"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="another button to enable border" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L0f-EP-lUi">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="makeBordered:" target="XfG-lQ-9wD" id="vux-wn-1UO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="eMF-Rg-2Pj" firstAttribute="leading" secondItem="pkm-WV-U3B" secondAttribute="leading" constant="77" id="5AE-BD-1v3"/>
+                                    <constraint firstAttribute="centerX" secondItem="im3-cR-tbg" secondAttribute="centerX" id="EQz-OH-5FH"/>
+                                    <constraint firstItem="im3-cR-tbg" firstAttribute="top" secondItem="eMF-Rg-2Pj" secondAttribute="bottom" constant="26" id="F3J-M3-jVa"/>
+                                    <constraint firstItem="eMF-Rg-2Pj" firstAttribute="top" secondItem="pkm-WV-U3B" secondAttribute="top" constant="64" id="QIY-ge-Trs"/>
+                                    <constraint firstAttribute="trailing" secondItem="eMF-Rg-2Pj" secondAttribute="trailing" constant="77" id="VBR-bB-N1I"/>
+                                    <constraint firstItem="33b-Rh-qWg" firstAttribute="top" secondItem="pkm-WV-U3B" secondAttribute="top" constant="23" id="i3a-na-vCf"/>
+                                    <constraint firstAttribute="centerX" secondItem="33b-Rh-qWg" secondAttribute="centerX" id="iAd-Wx-ZIe"/>
+                                    <constraint firstAttribute="bottom" secondItem="eMF-Rg-2Pj" secondAttribute="bottom" constant="64" id="uIe-ig-JKr"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bordered" value="YES"/>
                                 </userDefinedRuntimeAttributes>
