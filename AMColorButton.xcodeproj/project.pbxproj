@@ -15,6 +15,7 @@
 		42F0EE6D1A72711A006509C4 /* AMColorButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F0EE6C1A72711A006509C4 /* AMColorButtonTests.m */; };
 		42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192AD1A7B721800E93262 /* AMDashBorderedView.m */; };
 		42F192B31A7B726C00E93262 /* AMMoveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192B21A7B726C00E93262 /* AMMoveButton.m */; };
+		42F192B61A7BA74000E93262 /* AMMoveButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192B51A7BA74000E93262 /* AMMoveButtonTests.m */; };
 		42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		42F192AF1A7B722400E93262 /* AMDashBorderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDashBorderedView.h; path = AMColorButton/Classes/AMDashBorderedView.h; sourceTree = SOURCE_ROOT; };
 		42F192B11A7B726C00E93262 /* AMMoveButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMMoveButton.h; path = Classes/AMMoveButton.h; sourceTree = "<group>"; };
 		42F192B21A7B726C00E93262 /* AMMoveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMMoveButton.m; path = Classes/AMMoveButton.m; sourceTree = "<group>"; };
+		42F192B51A7BA74000E93262 /* AMMoveButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMMoveButtonTests.m; sourceTree = "<group>"; };
 		42FB1DA91A7A7EE1009CA1E3 /* AMColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMColorButton.h; path = Classes/AMColorButton.h; sourceTree = "<group>"; };
 		42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMColorButton.m; path = Classes/AMColorButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				42F0EE6C1A72711A006509C4 /* AMColorButtonTests.m */,
+				42F192B51A7BA74000E93262 /* AMMoveButtonTests.m */,
 				42F0EE6A1A72711A006509C4 /* Supporting Files */,
 			);
 			path = AMColorButtonTests;
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F192B61A7BA74000E93262 /* AMMoveButtonTests.m in Sources */,
 				42F0EE6D1A72711A006509C4 /* AMColorButtonTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
