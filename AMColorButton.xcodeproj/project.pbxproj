@@ -13,8 +13,8 @@
 		42F0EE5E1A72711A006509C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F0EE5D1A72711A006509C4 /* Images.xcassets */; };
 		42F0EE611A72711A006509C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F0EE5F1A72711A006509C4 /* Main.storyboard */; };
 		42F0EE6D1A72711A006509C4 /* AMColorButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F0EE6C1A72711A006509C4 /* AMColorButtonTests.m */; };
+		42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192AD1A7B721800E93262 /* AMDashBorderedView.m */; };
 		42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */; };
-		42FB1DAE1A7A7EE1009CA1E3 /* AMDashBorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FB1DAC1A7A7EE1009CA1E3 /* AMDashBorderedView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		42F0EE661A72711A006509C4 /* AMColorButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMColorButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0EE6B1A72711A006509C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F0EE6C1A72711A006509C4 /* AMColorButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMColorButtonTests.m; sourceTree = "<group>"; };
+		42F192AD1A7B721800E93262 /* AMDashBorderedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMDashBorderedView.m; path = AMColorButton/Classes/AMDashBorderedView.m; sourceTree = SOURCE_ROOT; };
+		42F192AF1A7B722400E93262 /* AMDashBorderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDashBorderedView.h; path = AMColorButton/Classes/AMDashBorderedView.h; sourceTree = SOURCE_ROOT; };
 		42FB1DA91A7A7EE1009CA1E3 /* AMColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMColorButton.h; path = Classes/AMColorButton.h; sourceTree = "<group>"; };
 		42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMColorButton.m; path = Classes/AMColorButton.m; sourceTree = "<group>"; };
-		42FB1DAB1A7A7EE1009CA1E3 /* AMDashBorderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDashBorderedView.h; path = ../Classes/AMDashBorderedView.h; sourceTree = "<group>"; };
-		42FB1DAC1A7A7EE1009CA1E3 /* AMDashBorderedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMDashBorderedView.m; path = ../Classes/AMDashBorderedView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 		42FB1DA51A7A595C009CA1E3 /* AMDashBorderedView */ = {
 			isa = PBXGroup;
 			children = (
-				42FB1DAB1A7A7EE1009CA1E3 /* AMDashBorderedView.h */,
-				42FB1DAC1A7A7EE1009CA1E3 /* AMDashBorderedView.m */,
+				42F192AF1A7B722400E93262 /* AMDashBorderedView.h */,
+				42F192AD1A7B721800E93262 /* AMDashBorderedView.m */,
 			);
 			path = AMDashBorderedView;
 			sourceTree = "<group>";
@@ -242,10 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F0EE5C1A72711A006509C4 /* ViewController.m in Sources */,
-				42FB1DAE1A7A7EE1009CA1E3 /* AMDashBorderedView.m in Sources */,
 				42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */,
 				42F0EE591A72711A006509C4 /* main.m in Sources */,
 				42F0EE571A72711A006509C4 /* AppDelegate.m in Sources */,
+				42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
