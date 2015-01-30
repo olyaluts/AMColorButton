@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 anadea. All rights reserved.
 //
 
-#import "AMMoveButton.h"
-@interface AMMoveButton() {
+#import "AMDragButton.h"
+@interface AMDragButton() {
     BOOL shouldClick;
 }
 @end
 
-@implementation AMMoveButton
+@implementation AMDragButton
 
 #pragma mark - Mouse events
 - (void)mouseDown:(NSEvent *)theEvent {

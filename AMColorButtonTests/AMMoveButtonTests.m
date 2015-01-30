@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
-#import "AMMoveButton.h"
+#import "AMDragButton.h"
 
 @interface AMTestContainer : NSView
 @property BOOL isDragged;
@@ -31,7 +31,7 @@
 
 @interface AMMoveButtonTests : XCTestCase {
     AMTestContainer *containerView;
-    AMMoveButton *moveButton;
+    AMDragButton *dragButton;
     BOOL isClicked;
 }
 
@@ -44,32 +44,32 @@
     isClicked = NO;
     containerView = [AMTestContainer new];
     
-    moveButton = [AMMoveButton new];
-    [moveButton setAction:@selector(buttonClicked:)];
-    [moveButton setTarget:self];
-    [containerView addSubview:moveButton];
+    dragButton = [AMDragButton new];
+    [dragButton setAction:@selector(buttonClicked:)];
+    [dragButton setTarget:self];
+    [containerView addSubview:dragButton];
 }
 
 - (void)tearDown {
-    [moveButton removeFromSuperview];
-    moveButton = nil;
+    [dragButton removeFromSuperview];
+    dragButton = nil;
     containerView = nil;
     [super tearDown];
 }
 
 - (void)testClick {
     XCTAssertFalse(isClicked);
-    [moveButton mouseDown:[NSEvent new]];
-    [moveButton mouseUp:[NSEvent new]];
+    [dragButton mouseDown:[NSEvent new]];
+    [dragButton mouseUp:[NSEvent new]];
     XCTAssertTrue(isClicked);
 }
 
 - (void)testDrag {
     XCTAssertFalse(isClicked);
     XCTAssertFalse(containerView.isDragged);
-    [moveButton mouseDown:[NSEvent new]];
-    [moveButton mouseDragged:[NSEvent new]];
-    [moveButton mouseUp:[NSEvent new]];
+    [dragButton mouseDown:[NSEvent new]];
+    [dragButton mouseDragged:[NSEvent new]];
+    [dragButton mouseUp:[NSEvent new]];
     XCTAssertFalse(isClicked);
     XCTAssertTrue(containerView.isDragged);
 }

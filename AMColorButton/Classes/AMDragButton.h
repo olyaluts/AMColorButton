@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AMMoveButton : NSButton
+@interface AMDragButton : NSButton
 
 @end
