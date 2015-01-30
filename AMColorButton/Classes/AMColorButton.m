@@ -7,7 +7,10 @@
 //
 
 #import "AMColorButton.h"
-
+@interface AMColorButton() {
+    NSTrackingArea *trackingArea;
+}
+@end
 @implementation AMColorButton
 - (id)init {
     self = [super init];
@@ -33,6 +36,17 @@
     return self;
 }
 
+- (void)updateTrackingAreas {
+    [super updateTrackingAreas];
+    if (trackingArea) {
+        [self removeTrackingArea:trackingArea];
+    }
+    
+    NSTrackingAreaOptions options = NSTrackingInVisibleRect | NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow;
+    trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:options owner:self userInfo:nil];
+    [self addTrackingArea:trackingArea];
+}
+
 -(void)setDefaultColors {
     self.titleColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
     self.titleHighlightedColor = [NSColor blackColor];
@@ -50,8 +64,6 @@
 }
 
 -(void)awakeFromNib {
-    [self addTrackingRect:NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height) owner:self userData:nil assumeInside:YES];
-    
     [self addObserver:self
            forKeyPath:@"cell.state"
               options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
@@ -142,6 +154,7 @@
         [self setBackgroundColorWithState:self.state];
     }
 }
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     [self setTextColorWithState:[change[@"new"] integerValue]];
     [self setBackgroundColorWithState:[change[@"new"] integerValue]];
