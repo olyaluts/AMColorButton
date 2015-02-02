@@ -45,6 +45,15 @@
     NSTrackingAreaOptions options = NSTrackingInVisibleRect | NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow;
     trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:options owner:self userInfo:nil];
     [self addTrackingArea:trackingArea];
+    
+    NSPoint mouseLocation = [self.window mouseLocationOutsideOfEventStream];
+    mouseLocation = [self convertPoint: mouseLocation fromView: nil];
+    
+    if (NSPointInRect(mouseLocation, [self bounds])){
+        [self mouseEntered: nil];
+    }else{
+        [self mouseExited: nil];
+    }
 }
 
 -(void)setDefaultColors {
