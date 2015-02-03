@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AMColorButton"
-  s.version      = “0.1.6”
+  s.version      = "0.1.7"
   s.summary      = "User can set title and background colour for NSButton"
 
   s.description  = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { "Dasha Kovalenko" => "dk@anahoret.com",
 		     "Olya Lutsyk" => "ol@anahoret.com"}
-  s.platform     = :osx, '10.10'
+  s.platform     = :osx, '10.9'
   s.source       = { :git => "https://github.com/olyaluts/AMColorButton.git" }
   s.source_files  = 'AMColorButton/Classes/*.{h,m}'
   s.requires_arc = true
