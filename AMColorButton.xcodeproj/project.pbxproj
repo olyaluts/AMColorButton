@@ -16,6 +16,9 @@
 		42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192AD1A7B721800E93262 /* AMDashBorderedView.m */; };
 		42F192B31A7B726C00E93262 /* AMDragButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192B21A7B726C00E93262 /* AMDragButton.m */; };
 		42F192B61A7BA74000E93262 /* AMMoveButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F192B51A7BA74000E93262 /* AMMoveButtonTests.m */; };
+		42F321E21A81184300F6DC54 /* CustomWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F321E11A81184300F6DC54 /* CustomWindowController.m */; };
+		42F321E61A81186A00F6DC54 /* AMTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F321E41A81186A00F6DC54 /* AMTitleBarViewController.m */; };
+		42F321E71A81186A00F6DC54 /* AMTitleBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F321E51A81186A00F6DC54 /* AMTitleBarViewController.xib */; };
 		42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,11 @@
 		42F192B11A7B726C00E93262 /* AMDragButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDragButton.h; path = Classes/AMDragButton.h; sourceTree = "<group>"; };
 		42F192B21A7B726C00E93262 /* AMDragButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMDragButton.m; path = Classes/AMDragButton.m; sourceTree = "<group>"; };
 		42F192B51A7BA74000E93262 /* AMMoveButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMMoveButtonTests.m; sourceTree = "<group>"; };
+		42F321E01A81184300F6DC54 /* CustomWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindowController.h; sourceTree = "<group>"; };
+		42F321E11A81184300F6DC54 /* CustomWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindowController.m; sourceTree = "<group>"; };
+		42F321E31A81186A00F6DC54 /* AMTitleBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTitleBarViewController.h; sourceTree = "<group>"; };
+		42F321E41A81186A00F6DC54 /* AMTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTitleBarViewController.m; sourceTree = "<group>"; };
+		42F321E51A81186A00F6DC54 /* AMTitleBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTitleBarViewController.xib; sourceTree = "<group>"; };
 		42FB1DA91A7A7EE1009CA1E3 /* AMColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMColorButton.h; path = Classes/AMColorButton.h; sourceTree = "<group>"; };
 		42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMColorButton.m; path = Classes/AMColorButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +103,11 @@
 				42F0EE791A727199006509C4 /* AMColorButton */,
 				42F0EE551A72711A006509C4 /* AppDelegate.h */,
 				42F0EE561A72711A006509C4 /* AppDelegate.m */,
+				42F321E01A81184300F6DC54 /* CustomWindowController.h */,
+				42F321E11A81184300F6DC54 /* CustomWindowController.m */,
+				42F321E31A81186A00F6DC54 /* AMTitleBarViewController.h */,
+				42F321E41A81186A00F6DC54 /* AMTitleBarViewController.m */,
+				42F321E51A81186A00F6DC54 /* AMTitleBarViewController.xib */,
 				42F0EE5A1A72711A006509C4 /* ViewController.h */,
 				42F0EE5B1A72711A006509C4 /* ViewController.m */,
 				42F0EE5D1A72711A006509C4 /* Images.xcassets */,
@@ -239,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F0EE5E1A72711A006509C4 /* Images.xcassets in Resources */,
+				42F321E71A81186A00F6DC54 /* AMTitleBarViewController.xib in Resources */,
 				42F0EE611A72711A006509C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +276,9 @@
 				42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */,
 				42F0EE591A72711A006509C4 /* main.m in Sources */,
 				42F0EE571A72711A006509C4 /* AppDelegate.m in Sources */,
+				42F321E61A81186A00F6DC54 /* AMTitleBarViewController.m in Sources */,
 				42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */,
+				42F321E21A81184300F6DC54 /* CustomWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +396,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AMColorButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -391,6 +408,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AMColorButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

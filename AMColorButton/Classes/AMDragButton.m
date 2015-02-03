@@ -22,7 +22,7 @@
 
 - (void)mouseDragged:(NSEvent *)theEvent {
     [self.superview mouseDragged:theEvent];
-    shouldClick = NO;
+    shouldClick = self.alwaysClick;
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
@@ -34,6 +34,10 @@
             func(self.target, self.action, self);
         }
     }
+}
+
+-(BOOL)mouseDownCanMoveWindow {
+    return YES;
 }
 
 @end

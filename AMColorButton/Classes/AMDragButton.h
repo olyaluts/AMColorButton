@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AMDragButton : NSButton
-
+@property IBInspectable BOOL alwaysClick;
 @end
