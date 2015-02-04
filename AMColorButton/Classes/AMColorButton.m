@@ -36,6 +36,23 @@
     return self;
 }
 
+-(void)awakeFromNib {
+    [self addObserver:self
+           forKeyPath:@"cell.state"
+              options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+              context:NULL];
+    [self setTextColorWithState:self.state];
+    [self setBackgroundColorWithState:self.state];
+}
+
+-(void)drawRect:(NSRect)dirtyRect {
+    [super drawRect:dirtyRect];
+
+    [self setWantsLayer:YES];
+    [self setBackgroundColorWithState:self.state];
+    self.layer.cornerRadius = self.cornerRadius;
+}
+
 - (void)updateTrackingAreas {
     [super updateTrackingAreas];
     if (trackingArea) {
@@ -54,39 +71,6 @@
     }else{
         [self mouseExited: nil];
     }
-}
-
--(void)setDefaultColors {
-    self.titleColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
-    self.titleHighlightedColor = [NSColor blackColor];
-    self.titleSelectedColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
-    
-    self.backgroundColor = nil;
-    self.highlightedBgColor = [NSColor colorWithCalibratedRed:210./255. green:230./255. blue:249./255. alpha:1.0];
-    self.selectedBgColor = nil;
-}
-
--(void)setCornerRadius:(CGFloat)cornerRadius {
-    _cornerRadius = cornerRadius;
-    [self setWantsLayer:YES];
-    self.layer.cornerRadius = _cornerRadius;
-}
-
--(void)awakeFromNib {
-    [self addObserver:self
-           forKeyPath:@"cell.state"
-              options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
-              context:NULL];
-    [self setTextColorWithState:self.state];
-    [self setBackgroundColorWithState:self.state];
-}
-
--(void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-
-    [self setWantsLayer:YES];
-    [self setBackgroundColorWithState:self.state];
-    self.layer.cornerRadius = self.cornerRadius;
 }
 
 #pragma mark - Mouse events
@@ -115,6 +99,22 @@
 }
 
 #pragma mark - Setters
+-(void)setDefaultColors {
+    self.titleColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
+    self.titleHighlightedColor = [NSColor blackColor];
+    self.titleSelectedColor = [NSColor colorWithCalibratedRed:30./255. green:171./255. blue:245./255. alpha:1.0];
+    
+    self.backgroundColor = nil;
+    self.highlightedBgColor = [NSColor colorWithCalibratedRed:210./255. green:230./255. blue:249./255. alpha:1.0];
+    self.selectedBgColor = nil;
+}
+
+-(void)setCornerRadius:(CGFloat)cornerRadius {
+    _cornerRadius = cornerRadius;
+    [self setWantsLayer:YES];
+    self.layer.cornerRadius = _cornerRadius;
+}
+
 -(void)setTitle:(NSString *)title {
     [super setTitle:title];
     if (self.titleColor != nil) {
