@@ -20,6 +20,7 @@
 		42F321E61A81186A00F6DC54 /* AMTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F321E41A81186A00F6DC54 /* AMTitleBarViewController.m */; };
 		42F321E71A81186A00F6DC54 /* AMTitleBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F321E51A81186A00F6DC54 /* AMTitleBarViewController.xib */; };
 		42FB1DAD1A7A7EE1009CA1E3 /* AMColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */; };
+		6F0183B01A823993005772D8 /* AMColorLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0183AF1A823993005772D8 /* AMColorLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		42F321E51A81186A00F6DC54 /* AMTitleBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTitleBarViewController.xib; sourceTree = "<group>"; };
 		42FB1DA91A7A7EE1009CA1E3 /* AMColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMColorButton.h; path = Classes/AMColorButton.h; sourceTree = "<group>"; };
 		42FB1DAA1A7A7EE1009CA1E3 /* AMColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMColorButton.m; path = Classes/AMColorButton.m; sourceTree = "<group>"; };
+		6F0183AE1A823993005772D8 /* AMColorLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMColorLine.h; path = Classes/AMColorLine.h; sourceTree = "<group>"; };
+		6F0183AF1A823993005772D8 /* AMColorLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMColorLine.m; path = Classes/AMColorLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 		42F0EE521A72711A006509C4 /* AMColorButton */ = {
 			isa = PBXGroup;
 			children = (
+				6F0183AA1A823878005772D8 /* AMColorLine */,
 				42F192B41A7B727600E93262 /* AMMoveButton */,
 				42FB1DA51A7A595C009CA1E3 /* AMDashBorderedView */,
 				42F0EE791A727199006509C4 /* AMColorButton */,
@@ -169,6 +173,15 @@
 				42F192AD1A7B721800E93262 /* AMDashBorderedView.m */,
 			);
 			path = AMDashBorderedView;
+			sourceTree = "<group>";
+		};
+		6F0183AA1A823878005772D8 /* AMColorLine */ = {
+			isa = PBXGroup;
+			children = (
+				6F0183AE1A823993005772D8 /* AMColorLine.h */,
+				6F0183AF1A823993005772D8 /* AMColorLine.m */,
+			);
+			name = AMColorLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +292,7 @@
 				42F321E61A81186A00F6DC54 /* AMTitleBarViewController.m in Sources */,
 				42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */,
 				42F321E21A81184300F6DC54 /* CustomWindowController.m in Sources */,
+				6F0183B01A823993005772D8 /* AMColorLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
