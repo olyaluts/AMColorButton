@@ -10,4 +10,5 @@
 
 @interface AMDragButton : NSButton
 @property IBInspectable BOOL alwaysClick;
+@property IBInspectable BOOL highlightable;
 @end

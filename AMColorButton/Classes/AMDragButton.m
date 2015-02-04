@@ -16,7 +16,7 @@
 
 #pragma mark - Mouse events
 - (void)mouseDown:(NSEvent *)theEvent {
-    [self.cell setHighlighted:YES];
+    [self.cell setHighlighted:self.highlightable && YES];
     shouldClick = YES;
 }
 
