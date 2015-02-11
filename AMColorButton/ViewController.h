@@ -9,9 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "AMDashBorderedView.h"
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet AMDashBorderedView *borderedView;
+@property (weak, nonatomic) IBOutlet NSTableView *table;
 
 -(IBAction)makeBordered:(id)sender;
 
