@@ -11,17 +11,10 @@
 
 @implementation AMTableRowView
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
-}
-
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    
-    if ([self numberOfColumns] > 0) {
-        NSView *viewCell = [self viewAtColumn:0];
+    for (int i = 0; i < [self numberOfColumns]; i++) {
+        NSView *viewCell = [self viewAtColumn:i];
         if (viewCell && [viewCell isKindOfClass:[AMTableCellView class]]) {
             [(AMTableCellView *)viewCell setHighlighted:selected];
         }

@@ -10,7 +10,6 @@
 
 @interface AMTableCellView : NSTableCellView
 
-@property (strong, nonatomic) IBInspectable NSColor *backgroundColor;
 @property (strong, nonatomic) IBInspectable NSColor *borderColor;
 @property (strong, nonatomic) IBInspectable NSColor *borderHighlightedColor;
 
