@@ -50,6 +50,14 @@
     [self.layer setBorderColor:(self.highlighted ? self.borderHighlightedColor : self.borderColor).CGColor];
 }
 
+- (void)drawRect:(NSRect)dirtyRect {
+    NSRect rect = NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height);
+    [[NSColor whiteColor] set];
+    NSRectFill(rect);
+    NSFrameRect(rect);
+    [self drawBorder];
+}
+
 - (void)setHighlighted:(BOOL)highlighted {
     _highlighted = highlighted;
     [self drawBorder];
