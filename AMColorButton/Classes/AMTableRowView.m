@@ -14,11 +14,16 @@
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     for (int i = 0; i < [self numberOfColumns]; i++) {
-        NSView *viewCell = [self viewAtColumn:i];
-        if (viewCell && [viewCell isKindOfClass:[AMTableCellView class]]) {
-            [(AMTableCellView *)viewCell setHighlighted:selected];
-        }
+        [self viewAtColumn:i];
     }
+}
+
+-(id)viewAtColumn:(NSInteger)column {
+    id viewCell = [super viewAtColumn:column];
+    if (viewCell && [viewCell isKindOfClass:[AMTableCellView class]]) {
+        [(AMTableCellView *)viewCell setHighlighted:self.selected];
+    }
+    return viewCell;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
