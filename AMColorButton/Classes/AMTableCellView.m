@@ -41,18 +41,22 @@
 - (void)setDefaults {
     self.borderColor = [NSColor colorWithSRGBRed:180.0/255.0 green:180.0/255.0 blue:180.0/255.0 alpha: 1.0];
     self.borderHighlightedColor = [NSColor colorWithSRGBRed:157.0/255.0 green:201.0/255.0 blue:248.0/255.0 alpha:1.0];
+    self.backgroundColor = [NSColor whiteColor];
+    self.borderWidth = 1.;
+    self.borderHighlightedWidth = 3.;
+    
     [self drawBorder];
 }
 
 - (void)drawBorder {
     [self setWantsLayer:YES];
-    [self.layer setBorderWidth:self.highlighted ? 3.0 : 1.0];
+    [self.layer setBorderWidth:self.highlighted ? self.borderHighlightedWidth : self.borderWidth];
     [self.layer setBorderColor:(self.highlighted ? self.borderHighlightedColor : self.borderColor).CGColor];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSRect rect = NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height);
-    [[NSColor whiteColor] set];
+    [self.backgroundColor set];
     NSRectFill(rect);
     NSFrameRect(rect);
     [self drawBorder];
