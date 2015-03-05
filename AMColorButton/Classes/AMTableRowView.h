@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AMTableRowView : NSTableRowView
+#import "AMBorderSelectableRow.h"
+
+@interface AMTableRowView : AMBorderSelectableRow
 
 @end
