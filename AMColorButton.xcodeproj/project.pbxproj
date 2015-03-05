@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42AFD5061AA8AD8A003E2344 /* AMBorderSelectableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AFD5051AA8AD8A003E2344 /* AMBorderSelectableRow.m */; };
+		42AFD5091AA8B028003E2344 /* AMBorderSelectableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AFD5081AA8B028003E2344 /* AMBorderSelectableRow.m */; };
 		42F0EE571A72711A006509C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F0EE561A72711A006509C4 /* AppDelegate.m */; };
 		42F0EE591A72711A006509C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F0EE581A72711A006509C4 /* main.m */; };
 		42F0EE5C1A72711A006509C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F0EE5B1A72711A006509C4 /* ViewController.m */; };
@@ -39,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42AFD5041AA8AD8A003E2344 /* AMBorderSelectableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBorderSelectableRow.h; sourceTree = "<group>"; };
-		42AFD5051AA8AD8A003E2344 /* AMBorderSelectableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBorderSelectableRow.m; sourceTree = "<group>"; };
+		42AFD5071AA8B028003E2344 /* AMBorderSelectableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMBorderSelectableRow.h; path = Classes/AMBorderSelectableRow.h; sourceTree = "<group>"; };
+		42AFD5081AA8B028003E2344 /* AMBorderSelectableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMBorderSelectableRow.m; path = Classes/AMBorderSelectableRow.m; sourceTree = "<group>"; };
 		42F0EE501A72711A006509C4 /* AMColorButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMColorButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0EE541A72711A006509C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F0EE551A72711A006509C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 				42FEDC2F1A8B925100DF3491 /* AMTableCellView.m */,
 				42FEDC371A8BA60300DF3491 /* AMTableRowView.h */,
 				42FEDC381A8BA60300DF3491 /* AMTableRowView.m */,
-				42AFD5041AA8AD8A003E2344 /* AMBorderSelectableRow.h */,
-				42AFD5051AA8AD8A003E2344 /* AMBorderSelectableRow.m */,
+				42AFD5071AA8B028003E2344 /* AMBorderSelectableRow.h */,
+				42AFD5081AA8B028003E2344 /* AMBorderSelectableRow.m */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				42FEDC391A8BA60300DF3491 /* AMTableRowView.m in Sources */,
 				42F192AE1A7B721800E93262 /* AMDashBorderedView.m in Sources */,
 				42F321E21A81184300F6DC54 /* CustomWindowController.m in Sources */,
-				42AFD5061AA8AD8A003E2344 /* AMBorderSelectableRow.m in Sources */,
+				42AFD5091AA8B028003E2344 /* AMBorderSelectableRow.m in Sources */,
 				6F0183B01A823993005772D8 /* AMColorLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
