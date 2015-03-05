@@ -41,7 +41,8 @@
 - (void)setDefaults {
     self.borderColor = [NSColor colorWithSRGBRed:180.0/255.0 green:180.0/255.0 blue:180.0/255.0 alpha: 1.0];
     self.borderHighlightedColor = [NSColor colorWithSRGBRed:157.0/255.0 green:201.0/255.0 blue:248.0/255.0 alpha:1.0];
-    self.backgroundColor = [NSColor whiteColor];
+    self.bgColor = [NSColor whiteColor];
+    self.bgHighlightedColor = [NSColor whiteColor];
     self.borderWidth = 1.;
     self.borderHighlightedWidth = 3.;
     
@@ -56,7 +57,7 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSRect rect = NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height);
-    [self.backgroundColor set];
+    [self.highlighted ? self.bgHighlightedColor : self.bgColor set];
     NSRectFill(rect);
     NSFrameRect(rect);
     [self drawBorder];
@@ -64,7 +65,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted {
     _highlighted = highlighted;
-    [self drawBorder];
+    [self setNeedsDisplay:YES];
 }
 
 @end

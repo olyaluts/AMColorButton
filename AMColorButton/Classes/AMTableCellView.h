@@ -12,7 +12,8 @@
 
 @property (strong, nonatomic) IBInspectable NSColor *borderColor;
 @property (strong, nonatomic) IBInspectable NSColor *borderHighlightedColor;
-@property (strong, nonatomic) IBInspectable NSColor *backgroundColor;
+@property (strong, nonatomic) IBInspectable NSColor *bgColor;
+@property (strong, nonatomic) IBInspectable NSColor *bgHighlightedColor;
 
 @property IBInspectable CGFloat borderWidth;
 @property IBInspectable CGFloat borderHighlightedWidth;
