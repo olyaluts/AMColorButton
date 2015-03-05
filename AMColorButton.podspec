@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AMColorButton"
-  s.version      = "0.1.12"
+  s.version      = "0.1.13"
   s.summary      = "User can set title and background colour for NSButton"
 
   s.description  = <<-DESC
