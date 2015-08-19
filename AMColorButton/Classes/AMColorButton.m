@@ -12,6 +12,11 @@
 }
 @end
 @implementation AMColorButton
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"cell.state" context:NULL];
+}
+
 - (id)init {
     self = [super init];
     if (self) {
